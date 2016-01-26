@@ -3,18 +3,21 @@
 <head>
     <meta charset="utf-8">
     
-    <title>标签：: Readings | Rolling Rocks</title>
+    <title>JavaScript Fundamental | Rolling Rocks</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Rolling Rocks">
-<meta property="og:url" content="http://glcrazier.github.io/tags/Readings/index.html">
+        <meta name="keywords" content="JavaScript, Programming" />
+    
+    <meta name="description" content="After years of programming with C++ and Java, I’m a little tired of writing lots of code. To implement a simple function such as initializing an array or a map, it takes a lot of lines of code. I hate">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript Fundamental">
+<meta property="og:url" content="http://glcrazier.github.io/2016/01/27/jsfundamental/index.html">
 <meta property="og:site_name" content="Rolling Rocks">
-<meta property="og:description">
+<meta property="og:description" content="After years of programming with C++ and Java, I’m a little tired of writing lots of code. To implement a simple function such as initializing an array or a map, it takes a lot of lines of code. I hate">
+<meta property="og:updated_time" content="2016-01-26T16:07:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Rolling Rocks">
-<meta name="twitter:description">
+<meta name="twitter:title" content="JavaScript Fundamental">
+<meta name="twitter:description" content="After years of programming with C++ and Java, I’m a little tired of writing lots of code. To implement a simple function such as initializing an array or a map, it takes a lot of lines of code. I hate">
 
     
 
@@ -83,62 +86,148 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-tag"></i>标签：: <em>Readings</em>
+    未分类
     </h1>
 </div>
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-jsfundamental" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2016" class="archive-year"><i class="icon fa fa-calendar-o"></i>2016</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/01/26/brickbybrick/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-01-26T15:58:23.000Z" itemprop="datePublished">2016-01-26</time></p>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2016/01/26/brickbybrick/">Review of Brick by Brick</a>
+        JavaScript Fundamental
         </h1>
     
 
-        <p class="article-excerpt">
-            PrefaceOrganizations of successful companies may differ in many forms. Some company have no titles and everyone works in a very fair environment. Some companies may allow their employees to spare soem
+            </header>
+        
+        <p class="article-byline">
+            <a href="/2016/01/27/jsfundamental/" class="article-date">
+    <time datetime="2016-01-26T16:06:33.000Z" itemprop="datePublished">2016-01-27</time>
+</a>
         </p>
+        <div class="article-entry" itemprop="articleBody">
+            <p>After years of programming with C++ and Java, I’m a little tired of writing lots of code. To implement a simple function such as initializing an array or a map, it takes a lot of lines of code. I hate this. So I thought if there is some language which could relieve from such hell. Then JavaScript comes to me.</p>
+<p>##Features</p>
+<ul>
+<li>JavaScript is a <strong>loose type</strong> language. Not like C++ or Java, it usually doesn’t check variable types and even tries its best to do type conversion.</li>
+<li>All data in JavaScript are objects.</li>
+</ul>
+<p>##Data Type<br>JavaScript has two types of objects:<br><strong>Primitive</strong><br>It includes basic data types like Numbers, Strings and Booleans. They are <strong>mutable</strong> that any changes on their properties would not take any effect.<br><strong>Non-Primitive</strong><br>Unlike primitive data, we can manipulate non-primitive objects by enumerating, adding, updating and deleting their properties. And properties can be configured as read-only in ECMAScript5.<br>The following code demonstrates how to enumerate properties of an object.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var example = &#123;&#10;&#9;member1: &#34;Test&#34;,&#10;&#9;member2: &#34;Test2&#34;&#10;&#125;&#10;for (var i in example) &#123;&#10;&#9;document.write(example[i])&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>##Variable</p>
+<p>###Declaration<br>A variable can be declared via <strong>var</strong> keyword.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var i = 0;</span><br></pre></td></tr></table></figure>
+<p>Not like those strict type language, programmers don’t need to explicit assign type to a variable. You can also declare a variable without var which means it is declared in global scope.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">i = 0;</span><br></pre></td></tr></table></figure>
+<p>###Null vs. undefined<br><strong>undefined</strong> is used to indicate variable that is not declared. Because JavaScript is an interpretor programming language that it’s impossible to check if a variable is declared ahead of execution, that’s why we need to adopt such a keyword.<br><strong>null</strong> is like other languages, used to indicated variable that is not initialized.</p>
+<p>###Scope<br>What’s special about scope in JavaScript is that it never works as you think in Java language. In Java, we are able to construct a scope by creating a pair of curly braces which is not the case in JavaScript. When a variable is declared, it is associated with a scope which could be a global one or a local one of a function. When encoutering a variable, the interpretor searches for its declaration in current scope where the code is executed. If no matching is found, it will search in current scope’s parent scope until the top scope which is global scope. We call all scopes involved as a <strong>scope chain</strong>.</p>
+<p>##Object</p>
+<p>###Properties</p>
+<p>###Inheritance</p>
+<p>##Array</p>
+<p>##Function</p>
+<p>###Context</p>
+<p>###Nested Function</p>
+<p>###Functional Programming</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://glcrazier.github.io/2016/01/27/jsfundamental/" data-id="cijvlk2p9000374s6peacirod" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+            
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript-Programming/">JavaScript, Programming</a></li></ul>
+
+        </footer>
     </div>
 </article>
-    
-        </div>
-    
+
+<section id="comments">
+
+    <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+<script>
+var disqus_shortname = 'hexo-theme-hueman';
 
 
-    </div></section>
+var disqus_url = 'http://glcrazier.github.io/2016/01/27/jsfundamental/';
 
+(function() {
+var dsq = document.createElement('script');
+dsq.type = 'text/javascript';
+dsq.async = true;
+dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
 
+</section>
 
                         </div>
                     </section>
@@ -198,6 +287,19 @@
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2016/01/27/artofreadablecode/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">Review of The Art of Readable Code</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
