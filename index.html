@@ -164,8 +164,10 @@
     <div class="article-entry" itemprop="articleBody">
       
                 
-        <h2 id="Beginning"><a href="#Beginning" class="headerlink" title="Beginning"></a>Beginning</h2><p>The first reason I turned to this book was that I’m not very good at problem solving but I believe there must be some path to solve a problem. Such a path probably includes a series of actions to get the problem solved. This book discussed a lot about how to teach students to solve mathematics problems.</p>
-<h2 id="Four_Steps_of_Solving_A_Problem"><a href="#Four_Steps_of_Solving_A_Problem" class="headerlink" title="Four Steps of Solving A Problem"></a>Four Steps of Solving A Problem</h2><ol>
+        <h2>Beginning</h2>
+<p>The first reason I turned to this book was that I'm not very good at problem solving but I believe there must be some path to solve a problem. Such a path probably includes a series of actions to get the problem solved. This book discussed a lot about how to teach students to solve mathematics problems.</p>
+<h2>Four Steps of Solving A Problem</h2>
+<ol>
 <li>Getting Acquainted</li>
 <li>Working for Better Understanding</li>
 <li>Hunting for the Helpful Idea</li>
@@ -218,12 +220,16 @@
     <div class="article-entry" itemprop="articleBody">
       
                 
-        <p>After years of programming with C++ and Java, I’m a little tired of writing lots of code. To implement a simple function such as initializing an array or a map, it takes a lot of lines of code. I hate this. So I thought if there is some language which could relieve from such hell. Then JavaScript comes to me.</p>
-<h2 id="Good"><a href="#Good" class="headerlink" title="Good"></a>Good</h2><h3 id="Type_Free"><a href="#Type_Free" class="headerlink" title="Type Free"></a>Type Free</h3><p>As a newcomer of JavaScript, you will get that it’s a language full of freedom. It rarely checks variable type, so you can forget those keywords like int, float and double etc. All you need is to use a <strong>var</strong> keyword to declare a variable. Sometimes you don’t even have to use <strong>var</strong>. The difference between these two ways of declaring variables will be discussed later.</p>
-<h3 id="Easy_Run"><a href="#Easy_Run" class="headerlink" title="Easy Run"></a>Easy Run</h3><p>The next suprising thing is that unlike Java or C++, you don’t need to set up any development environment to build you code and run the executable. The web browser interpretes and run JavaScript code at runtime. It’s relatively up to you to organize your JavaScript code. You can put all your code into a single html file. You can also separate your code into a couple of files for better modulized and future reusability. </p>
-<p>Copy the following snippet into a new file, save it with suffix html. Open it with your web browser and see what’s going on.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;html&#62;&#10;&#9;&#60;head&#62;&#10;&#9;&#60;script&#62;&#10;&#9;&#9;document.write(&#34;Hello World&#34;)&#10;&#9;&#60;/script&#62;&#10;&#9;&#60;/head&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure>
-<h3 id="Everything_is_Object"><a href="#Everything_is_Object" class="headerlink" title="Everything is Object"></a>Everything is Object</h3>
+        <p>After years of programming with C++ and Java, I'm a little tired of writing lots of code. To implement a simple function such as initializing an array or a map, it takes a lot of lines of code. I hate this. So I thought if there is some language which could relieve from such hell. Then JavaScript comes to me.</p>
+<h2>Good</h2>
+<h3>Type Free</h3>
+<p>As a newcomer of JavaScript, you will get that it's a language full of freedom. It rarely checks variable type, so you can forget those keywords like int, float and double etc. All you need is to use a <strong>var</strong> keyword to declare a variable. Sometimes you don't even have to use <strong>var</strong>. The difference between these two ways of declaring variables will be discussed later.</p>
+<h3>Easy Run</h3>
+<p>The next suprising thing is that unlike Java or C++, you don't need to set up any development environment to build you code and run the executable. The web browser interpretes and run JavaScript code at runtime. It's relatively up to you to organize your JavaScript code. You can put all your code into a single html file. You can also separate your code into a couple of files for better modulized and future reusability.</p>
+<p>Copy the following snippet into a new file, save it with suffix html. Open it with your web browser and see what's going on.</p>
+<p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line">		<span class="built_in">document</span>.write(<span class="string">"Hello World"</span>)</span><br><span class="line">	</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3>Everything is Object</h3>
+
       
     </div>
     <footer class="article-footer">
@@ -270,22 +276,25 @@
     <div class="article-entry" itemprop="articleBody">
       
                 
-        <p>The most benefit of writing readable code is to help others read your code and you share your thoughts inside the code. After long period without touching the code, we can also pick up those “old granny” easily.</p>
-<h3 id="Name_and_Method"><a href="#Name_and_Method" class="headerlink" title="Name and Method"></a>Name and Method</h3><ol>
+        <p>The most benefit of writing readable code is to help others read your code and you share your thoughts inside the code. After long period without touching the code, we can also pick up those &quot;old granny&quot; easily.</p>
+<h3>Name and Method</h3>
+<ol>
 <li>It must be clear and not confusing. Try re-reading names to see if it could cause misunderstanding.</li>
 <li>Try not using names like <em>tmp</em>, <em>i</em>, <em>j</em>. Every variable should have some meaning.</li>
-<li>Don’t use project specific abbreviations.</li>
-<li>To name a boolean, use words like <em>is</em> or <em>has</em> to indicate it’s a boolean variable. </li>
+<li>Don't use project specific abbreviations.</li>
+<li>To name a boolean, use words like <em>is</em> or <em>has</em> to indicate it's a boolean variable.</li>
 </ol>
-<h3 id="Code_Looking"><a href="#Code_Looking" class="headerlink" title="Code Looking"></a>Code Looking</h3><ol>
+<h3>Code Looking</h3>
+<ol>
 <li>If multiple blocks of code are doing familiar things, try to give them the same silhouette.</li>
-<li>Aligning parts of the code into ‘columns’ can make code easy to skim through.</li>
-<li>If code mentions A, B, and C in one place, don’t say B, C, and A in another. Pick a meaningful order and stick with it.</li>
-<li>Use empty lines to break apart large blocks into logical “paragraphs”.</li>
+<li>Aligning parts of the code into 'columns' can make code easy to skim through.</li>
+<li>If code mentions A, B, and C in one place, don't say B, C, and A in another. Pick a meaningful order and stick with it.</li>
+<li>Use empty lines to break apart large blocks into logical &quot;paragraphs&quot;.</li>
 </ol>
-<h3 id="Comment"><a href="#Comment" class="headerlink" title="Comment"></a>Comment</h3><ol>
-<li>If what a given method does can be understood by its name, don’t use comment.</li>
-<li>Comment is used to show your insight about the code.  </li>
+<h3>Comment</h3>
+<ol>
+<li>If what a given method does can be understood by its name, don't use comment.</li>
+<li>Comment is used to show your insight about the code.</li>
 </ol>
 
       
@@ -334,8 +343,10 @@
     <div class="article-entry" itemprop="articleBody">
       
                 
-        <h3 id="About_organization_forms"><a href="#About_organization_forms" class="headerlink" title="About organization forms"></a>About organization forms</h3><p>Organizations of <strong>successful</strong> companies may differ in many forms. Some company have no titles and everyone works in a very fair environment. Some companies may allow their employees to spare soem amount of their time to work on other stuff like Google. Some companies may be like Apple that everything is counted on Steve Jobs. LEGO is a company with levels and titles. And he requires all members to focus on company’s work. <strong>There doesn’t exist the best organization form.</strong> </p>
-<h3 id="Principles_learned_from_LEGO"><a href="#Principles_learned_from_LEGO" class="headerlink" title="Principles learned from LEGO"></a>Principles learned from LEGO</h3><ul>
+        <h3>About organization forms</h3>
+<p>Organizations of <strong>successful</strong> companies may differ in many forms. Some company have no titles and everyone works in a very fair environment. Some companies may allow their employees to spare soem amount of their time to work on other stuff like Google. Some companies may be like Apple that everything is counted on Steve Jobs. LEGO is a company with levels and titles. And he requires all members to focus on company's work. <strong>There doesn't exist the best organization form.</strong></p>
+<h3>Principles learned from LEGO</h3>
+<ul>
 <li>Only the best is good enough.</li>
 </ul>
 
