@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://glcrazier.github.io/2016/01/27/jsfundamental/index.html">
 <meta property="og:site_name" content="Rolling Rocks">
 <meta property="og:description" content="After years of programming with C++ and Java, I’m a little tired of writing lots of code. To implement a simple function such as initializing an array or a map, it takes a lot of lines of code. I hate">
-<meta property="og:updated_time" content="2016-01-27T14:52:11.000Z">
+<meta property="og:updated_time" content="2016-01-27T15:02:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript First Glance">
 <meta name="twitter:description" content="After years of programming with C++ and Java, I’m a little tired of writing lots of code. To implement a simple function such as initializing an array or a map, it takes a lot of lines of code. I hate">
@@ -166,8 +166,9 @@
                 
         <p>After years of programming with C++ and Java, I’m a little tired of writing lots of code. To implement a simple function such as initializing an array or a map, it takes a lot of lines of code. I hate this. So I thought if there is some language which could relieve from such hell. Then JavaScript comes to me.</p>
 <h2 id="Good"><a href="#Good" class="headerlink" title="Good"></a>Good</h2><h3 id="Type_Free"><a href="#Type_Free" class="headerlink" title="Type Free"></a>Type Free</h3><p>As a newcomer of JavaScript, you will get that it’s a language full of freedom. It rarely checks variable type, so you can forget those keywords like int, float and double etc. All you need is to use a <strong>var</strong> keyword to declare a variable. Sometimes you don’t even have to use <strong>var</strong>. The difference between these two ways of declaring variables will be discussed later.</p>
-<h3 id="Easy_Run"><a href="#Easy_Run" class="headerlink" title="Easy Run"></a>Easy Run</h3><p>The next suprising thing is that unlike Java or C++, you don’t need to set up any development environment to build you code and run the executable. You only have to create a html file and write some JavaScript code there, then use your web browser to open it. Oops, it works! It’s relatively up to you to place your JavaScript code. You can put all your code into a single html file. You can also place them into a couple of files for better structures and future reusing. </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;html&#62;&#10;&#60;head&#62;&#10;&#9;document.write(&#34;Hello World&#34;)&#10;&#60;/head&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure>
+<h3 id="Easy_Run"><a href="#Easy_Run" class="headerlink" title="Easy Run"></a>Easy Run</h3><p>The next suprising thing is that unlike Java or C++, you don’t need to set up any development environment to build you code and run the executable. The web browser interpretes and run JavaScript code at runtime. It’s relatively up to you to organize your JavaScript code. You can put all your code into a single html file. You can also separate your code into a couple of files for better modulized and future reusability. </p>
+<p>Copy the following snippet into a new file, save it with suffix html. Open it with your web browser and see what’s going on.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;html&#62;&#10;&#9;&#60;head&#62;&#10;&#9;&#60;script&#62;&#10;&#9;&#9;document.write(&#34;Hello World&#34;)&#10;&#9;&#60;/script&#62;&#10;&#9;&#60;/head&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure>
 <h3 id="Everything_is_Object"><a href="#Everything_is_Object" class="headerlink" title="Everything is Object"></a>Everything is Object</h3>
       
     </div>
