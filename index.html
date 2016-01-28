@@ -132,6 +132,74 @@
 
       
       <section id="main">
+      <article id="post-jsfundamental" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/28/jsfundamental/">JavaScript First Glance</a>
+    </h1>
+  
+
+        <div class="article-meta">
+          
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2016/01/28/jsfundamental/">
+      <time datetime="2016-01-27T16:06:33.000Z" itemprop="datePublished">2016-01-28</time>
+    </a>
+  </div>
+
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+                
+        <p>After years of programming with C++ and Java, I'm a little tired of writing lots of code. To implement a simple function such as initializing an array or a map, it takes a lot of lines of code. I hate this. So I thought if there is some language which could relieve from such hell. Then JavaScript comes to me.</p>
+<h2>Benifits</h2>
+<hr>
+<h3>Type Free</h3>
+<p>As a newcomer of JavaScript, you will get that it's a language full of freedom. It rarely checks variable type, so you can forget those keywords like int, float and double etc. All you need is to use a <strong>var</strong> keyword to declare a variable. Sometimes you don't even have to use <strong>var</strong>. The difference between these two ways of declaring variables will be discussed later.</p>
+<h3>Easy Run</h3>
+<p>The next suprising thing is that unlike Java or C++, you don't need to set up any development environment to build you code and run the executable. The web browser interpretes and run JavaScript code at runtime. It's relatively up to you to organize your JavaScript code. You can put all your code into a single html file. You can also separate your code into a couple of files for better modulized and future reusability.</p>
+<p>Copy the following snippet into a new file, save it with suffix html. Open it with your web browser and see what's going on.</p>
+<p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line">		<span class="built_in">document</span>.write(<span class="string">"Hello World"</span>)</span><br><span class="line">	</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3>Function is Object</h3>
+<p>In JavaScript, function is a special kind of object. It benefits us a lot because we can pass function as parameter or assign it to another object. For example, in Java, if we want to have one method to be executed with callbacks. It requires at least two steps:</p>
+<ul>
+<li>Create a new interface that could be accepted by target method.</li>
+<li>Create and pass a new inner class implementing the above interface to that method.</li>
+</ul>
+<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Callback</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">onExecute</span><span class="params">(<span class="keyword">int</span> arg)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Target</span> </span>&#123;</span><br><span class="line">	Callback mCallback;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setCallback</span><span class="params">(Callback callback)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//usually we have a member varaible to refer to this parameter.</span></span><br><span class="line">		mCallback = callback;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(...)</span> </span>&#123;</span><br><span class="line">		Target target = <span class="keyword">new</span> Target();</span><br><span class="line">		target.setCallback(<span class="keyword">new</span> Callback() &#123;</span><br><span class="line">			<span class="function"><span class="keyword">void</span> <span class="title">onExecute</span><span class="params">(<span class="keyword">int</span> arg)</span> </span>&#123;</span><br><span class="line">				System.println(<span class="string">"callback is invoked."</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;)</span><br><span class="line">		target.mCallbck.onExecute(<span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>In JavaScript, you need only need one step like following code:</p>
+<p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> target = &#123;</span><br><span class="line">	callback : <span class="literal">null</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">target.callback = <span class="function"><span class="keyword">function</span>(<span class="params">arg</span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"callback is invoked."</span>)</span><br><span class="line">&#125;</span><br><span class="line">target.callback(<span class="number">0</span>)</span><br></pre></td></tr></table></figure></p>
+<p>This is only one of the benefits that JavaScript function brings. We may talk more adavanced topics such as functional programming, closure and etc. in future which Java and C++ don't have.</p>
+<h3>Not Only the Browser</h3>
+<p>JavaScript was initially designed for supporting the browser. However, it's not the case anymore in nowadays. We can do server work using JavaScript in <strong>NodeJs</strong>. And for mobile devices. we now have <strong>react native</strong> to write high performance program on Android and iOS devices.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://glcrazier.github.io/2016/01/28/jsfundamental/" data-id="cijwyenjw0005pes6ku6nj3ct" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Programming/">Programming</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+    
       <article id="post-howtosolveit" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -179,74 +247,6 @@
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mathematics/">Mathematics</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Readings/">Readings</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-    
-      <article id="post-jsfundamental" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/27/jsfundamental/">JavaScript First Glance</a>
-    </h1>
-  
-
-        <div class="article-meta">
-          
-  <div class="article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2016/01/27/jsfundamental/">
-      <time datetime="2016-01-26T16:06:33.000Z" itemprop="datePublished">2016-01-27</time>
-    </a>
-  </div>
-
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-                
-        <p>After years of programming with C++ and Java, I'm a little tired of writing lots of code. To implement a simple function such as initializing an array or a map, it takes a lot of lines of code. I hate this. So I thought if there is some language which could relieve from such hell. Then JavaScript comes to me.</p>
-<h2>Benifits</h2>
-<hr>
-<h3>Type Free</h3>
-<p>As a newcomer of JavaScript, you will get that it's a language full of freedom. It rarely checks variable type, so you can forget those keywords like int, float and double etc. All you need is to use a <strong>var</strong> keyword to declare a variable. Sometimes you don't even have to use <strong>var</strong>. The difference between these two ways of declaring variables will be discussed later.</p>
-<h3>Easy Run</h3>
-<p>The next suprising thing is that unlike Java or C++, you don't need to set up any development environment to build you code and run the executable. The web browser interpretes and run JavaScript code at runtime. It's relatively up to you to organize your JavaScript code. You can put all your code into a single html file. You can also separate your code into a couple of files for better modulized and future reusability.</p>
-<p>Copy the following snippet into a new file, save it with suffix html. Open it with your web browser and see what's going on.</p>
-<p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line">		<span class="built_in">document</span>.write(<span class="string">"Hello World"</span>)</span><br><span class="line">	</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h3>Function is Object</h3>
-<p>In JavaScript, function is a special kind of object. It benefits us a lot because we can pass function as parameter or assign it to another object. For example, in Java, if we want to have one method to be executed with callbacks. It requires at least two steps:</p>
-<ul>
-<li>Create a new interface that could be accepted by target method.</li>
-<li>Create and pass a new inner class implementing the above interface to that method.</li>
-</ul>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Callback</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">onExecute</span><span class="params">(<span class="keyword">int</span> arg)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Target</span> </span>&#123;</span><br><span class="line">	Callback mCallback;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setCallback</span><span class="params">(Callback callback)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//usually we have a member varaible to refer to this parameter.</span></span><br><span class="line">		mCallback = callback;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(...)</span> </span>&#123;</span><br><span class="line">		Target target = <span class="keyword">new</span> Target();</span><br><span class="line">		target.setCallback(<span class="keyword">new</span> Callback() &#123;</span><br><span class="line">			<span class="function"><span class="keyword">void</span> <span class="title">onExecute</span><span class="params">(<span class="keyword">int</span> arg)</span> </span>&#123;</span><br><span class="line">				System.println(<span class="string">"callback is invoked."</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;)</span><br><span class="line">		target.mCallbck.onExecute(<span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>In JavaScript, you need only need one step like following code:</p>
-<p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> target = &#123;</span><br><span class="line">	callback : <span class="literal">null</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">target.callback = <span class="function"><span class="keyword">function</span>(<span class="params">arg</span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"callback is invoked."</span>)</span><br><span class="line">&#125;</span><br><span class="line">target.callback(<span class="number">0</span>)</span><br></pre></td></tr></table></figure></p>
-<p>This is only one of the benefits that JavaScript function brings. We may talk more adavanced topics such as functional programming, closure and etc. in future which Java and C++ don't have.</p>
-<h3>Not Only the Browser</h3>
-<p>JavaScript was initially designed for supporting the browser. However, it's not the case anymore in nowadays. We can do server work using JavaScript in <strong>NodeJs</strong>. And for mobile devices. we now have <strong>react native</strong> to write high performance program on Android and iOS devices.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://glcrazier.github.io/2016/01/27/jsfundamental/" data-id="cijwyenjw0005pes6ku6nj3ct" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Programming/">Programming</a></li></ul>
 
     </footer>
   </div>
@@ -388,6 +388,23 @@
           <li>
             
             <div class="item-thumbnail">
+              <a href="/2016/01/28/jsfundamental/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2016/01/28/jsfundamental/" class="title">JavaScript First Glance</a></p>
+              <p class="item-date"><time datetime="2016-01-27T16:06:33.000Z" itemprop="datePublished">2016-01-28</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
               <a href="/2016/01/27/howtosolveit/" class="thumbnail">
   
     <span style="background-image:url(http://ec4.images-amazon.com/images/I/91WLeILYlLL.jpg)" alt="How To Solve It" class="thumbnail-image"></span>
@@ -399,23 +416,6 @@
               <p class="item-category"></p>
               <p class="item-title"><a href="/2016/01/27/howtosolveit/" class="title">How To Solve It</a></p>
               <p class="item-date"><time datetime="2016-01-27T05:34:26.000Z" itemprop="datePublished">2016-01-27</time></p>
-            </div>
-          </li>
-        
-          <li>
-            
-            <div class="item-thumbnail">
-              <a href="/2016/01/27/jsfundamental/" class="thumbnail">
-  
-    <span class="thumbnail-image thumbnail-none"></span>
-  
-</a>
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"></p>
-              <p class="item-title"><a href="/2016/01/27/jsfundamental/" class="title">JavaScript First Glance</a></p>
-              <p class="item-date"><time datetime="2016-01-26T16:06:33.000Z" itemprop="datePublished">2016-01-27</time></p>
             </div>
           </li>
         
